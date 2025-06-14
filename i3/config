@@ -435,7 +435,7 @@ exec --no-startup-id ~/.screenlayout/monitor.sh
 # exec --no-startup-id sleep 1 && feh --bg-fill /home/purple-mountain/Pictures/Wallpapers/unixporn/the-eva-rectangle-A40EB.jpg
 # exec --no-startup-id sleep 1 && feh --bg-fill /home/purple-mountain/Pictures/Wallpapers/unixporn/unknown-FAC46.png
 
-exec --no-startup-id sleep 1 && feh --bg-fill /home/purple-mountain/nixos/dotfiles/i3/eva-wallpaper.png
+exec --no-startup-id sleep 1 && feh --bg-fill ./jojo-dio-wallpaper.jpg
 
 # set powersavings for display:
 exec --no-startup-id xset s 480 dpms 600 600 600
