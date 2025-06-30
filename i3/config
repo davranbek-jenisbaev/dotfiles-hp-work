@@ -184,8 +184,10 @@ bindsym $mod+Right resize grow width 10 px or 10 ppt
 # keybindings for different actions: #
 ######################################
 
-# start muffon
-bindsym $mod+m exec appimage-run ~/appimages/muffon-2.0.3-linux-x86_64.AppImage
+# i3 bar show
+# bindsym $mod+m exec --no-startup-id i3-msg bar mode toggle
+
+bindsym $mod+m exec --no-startup-id ~/.config/i3/scripts/toggle-bar
 
 # start a terminal
 bindsym $mod+Return exec ghostty
@@ -555,14 +557,16 @@ client.urgent		    	$urgentred	$urgentred	$white		$yellowbrown	$yellowbrown
 ############################################
 
 
-# bar {
-#     colors {
-#       background #00000000
-#     }
-#     status_command i3status -c ~/.config/i3/i3status/config
-#     tray_output primary
-#     # tray_output none
-# }
+bar {
+    colors {
+      background #00000000
+    }
+    status_command i3status -c ~/.config/i3/i3status/config
+    tray_output primary
+    # mode hide
+    # hidden_state hide
+    # tray_output none
+}
 
 #####################################
 # Application menu handled by rofi: #

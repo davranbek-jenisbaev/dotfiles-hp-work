@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+if pgrep -x i3bar >/dev/null; then
+  pkill -x i3bar
+else
+  i3bar --bar_id=bar-0 &
+fi
