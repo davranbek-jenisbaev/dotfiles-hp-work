@@ -107,16 +107,19 @@ eval "$(zoxide init zsh)"
 
 alias vim="nvim"
 alias dc="docker compose"
+alias lg="lazygit"
+alias x="npm run"
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-bindkey '^[OA' up-line-or-history
-bindkey '^[OB' down-line-or-history
-
-bindkey '^[k' history-substring-search-up
-bindkey '^[j' history-substring-search-down
+# non vi legacy
+# bindkey '^[OA' up-line-or-history
+# bindkey '^[OB' down-line-or-history
+#
+# bindkey '^[k' history-substring-search-up
+# bindkey '^[j' history-substring-search-down
 
 # bun completions
 [ -s "/home/davranbekjenisbaev/.bun/_bun" ] && source "/home/davranbekjenisbaev/.bun/_bun"
@@ -127,3 +130,12 @@ if [ -e /home/davranbekjenisbaev/.nix-profile/etc/profile.d/nix.sh ]; then . /ho
 # enable full vi editing mode
 bindkey -v
 export KEYTIMEOUT=1
+
+bindkey -M viins '^[OA' up-line-or-history
+bindkey -M viins '^[OB' down-line-or-history
+bindkey -M viins '^[k' history-substring-search-up
+bindkey -M viins '^[j' history-substring-search-down
+
+# restore Tab completion in both modes
+bindkey -M viins '^I' expand-or-complete
+bindkey -M vicmd '^I' expand-or-complete
